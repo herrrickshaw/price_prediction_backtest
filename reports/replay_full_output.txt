@@ -1,0 +1,270 @@
+
+================ US ================
+
+--- US h=5d: signal alone ---
+                n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal                                                               
+BREAKDOWN_SELL      42016     2306           0.06         0.73  50.79
+BREAKOUT_BUY        68724     2409           0.10         1.79  49.93
+
+--- US h=5d: signal x trend regime ---
+                      n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         trend                                                       
+BREAKDOWN_SELL bear       15339      399           0.34         1.28  52.04
+               bull       22500     1757           0.02         0.19  50.51
+               chop        3047      106          -0.55        -1.17  46.67
+BREAKOUT_BUY   bear        4952      380          -0.06        -0.23  48.51
+               bull       60807     1879           0.11         2.40  49.98
+               chop        2134      107           0.48         1.63  50.23
+
+--- US h=5d: signal x vol regime ---
+                           n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         vol_regime                                                       
+BREAKDOWN_SELL LOW              5941      424           0.14         0.87  49.57
+               MID             14230      819           0.13         1.26  50.75
+               HIGH            19261      848          -0.00        -0.00  51.24
+BREAKOUT_BUY   LOW             15391      437           0.07         0.88  51.05
+               MID             26288      859           0.17         2.45  50.33
+               HIGH            20939      897           0.09         0.65  48.42
+
+--- US h=21d: signal alone ---
+                n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal                                                               
+BREAKDOWN_SELL      41663     2290           0.23         1.08  50.93
+BREAKOUT_BUY        68213     2393           0.44         3.53  50.22
+
+--- US h=21d: signal x trend regime ---
+                      n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         trend                                                       
+BREAKDOWN_SELL bear       15339      399           1.29         1.65  53.52
+               bull       22147     1741          -0.04        -0.19  49.46
+               chop        3047      106           0.04         0.04  48.67
+BREAKOUT_BUY   bear        4952      380          -0.85        -1.88  46.67
+               bull       60296     1863           0.66         5.72  50.56
+               chop        2134      107           1.35         1.23  46.86
+
+--- US h=21d: signal x vol regime ---
+                           n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         vol_regime                                                       
+BREAKDOWN_SELL LOW              5941      424          -0.33        -0.86  48.95
+               MID             14223      819           0.37         1.30  51.02
+               HIGH            18915      832           0.43         0.92  51.65
+BREAKOUT_BUY   LOW             15392      437           0.50         3.25  51.39
+               MID             26287      859           0.63         4.71  50.99
+               HIGH            20428      881           0.32         1.07  48.11
+
+================ IN ================
+
+--- IN h=5d: signal alone ---
+                n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal                                                               
+BREAKDOWN_SELL      30157     2016           0.21         2.59  51.75
+BREAKOUT_BUY        33207     2249           0.72        10.33  49.47
+
+--- IN h=5d: signal x trend regime ---
+                      n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         trend                                                       
+BREAKDOWN_SELL bear       13463      496           0.31         1.87  52.53
+               bull       13576     1352           0.13         1.31  50.70
+               chop        2571      128           0.43         1.51  52.78
+BREAKOUT_BUY   bear        3243      481           0.16         0.73  46.19
+               bull       28236     1600           0.95        14.42  50.00
+               chop        1282      129          -0.16        -0.55  46.49
+
+--- IN h=5d: signal x vol regime ---
+                           n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         vol_regime                                                       
+BREAKDOWN_SELL LOW              8226      566           0.33         2.68  51.28
+               MID             10051      600           0.41         2.90  52.84
+               HIGH            10597      664          -0.20        -1.25  50.95
+BREAKOUT_BUY   LOW             11571      628           0.81         9.37  49.89
+               MID              9193      671           0.64         4.86  48.47
+               HIGH             9581      740           0.65         4.35  49.23
+
+--- IN h=21d: signal alone ---
+                n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal                                                               
+BREAKDOWN_SELL      30152     2007           0.73         4.85  50.77
+BREAKOUT_BUY        33132     2236           1.64        13.17  50.11
+
+--- IN h=21d: signal x trend regime ---
+                      n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         trend                                                       
+BREAKDOWN_SELL bear       13432      488           0.96         3.23  51.88
+               bull       13605     1352           0.56         2.96  49.33
+               chop        2568      127           1.45         2.95  51.71
+BREAKOUT_BUY   bear        3176      469           0.57         1.42  47.36
+               bull       28253     1601           2.08        17.58  50.60
+               chop        1257      127           0.20         0.42  47.57
+
+--- IN h=21d: signal x vol regime ---
+                           n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         vol_regime                                                       
+BREAKDOWN_SELL LOW              8253      564           0.58         2.44  49.52
+               MID             10031      593           0.99         3.80  52.16
+               HIGH            10585      664           0.50         1.60  50.17
+BREAKOUT_BUY   LOW             11569      628           2.25        13.24  51.59
+               MID              9135      657           1.35         6.22  49.73
+               HIGH             9566      741           1.34         5.16  48.86
+
+================ JP ================
+
+--- JP h=5d: signal alone ---
+                n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal                                                               
+BREAKDOWN_SELL      42903     2142           0.05         0.84  50.22
+BREAKOUT_BUY        64465     2334           0.24         4.98  49.54
+
+--- JP h=5d: signal x trend regime ---
+                      n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         trend                                                       
+BREAKDOWN_SELL bear       14096      366           0.36         2.39  51.77
+               bull       24282     1608          -0.01        -0.16  49.82
+               chop        4209      133          -0.13        -0.60  47.78
+BREAKOUT_BUY   bear        4810      384          -0.00        -0.01  45.38
+               bull       54931     1763           0.26         5.54  49.76
+               chop        2754      143           0.69         2.06  50.87
+
+--- JP h=5d: signal x vol regime ---
+                           n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         vol_regime                                                       
+BREAKDOWN_SELL LOW              5945      384           0.04         0.33  48.48
+               MID             12567      703           0.09         0.91  51.48
+               HIGH            22613      874           0.04         0.40  50.10
+BREAKOUT_BUY   LOW             13200      397           0.43         3.45  50.69
+               MID             20380      748           0.16         2.22  48.79
+               HIGH            22897      969           0.16         1.86  48.67
+
+--- JP h=21d: signal alone ---
+                n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal                                                               
+BREAKDOWN_SELL      42624     2126           0.27         2.26  50.19
+BREAKOUT_BUY        64187     2318           0.62         6.93  49.37
+
+--- JP h=21d: signal x trend regime ---
+                      n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         trend                                                       
+BREAKDOWN_SELL bear       14096      366           1.59         5.44  53.11
+               bull       24003     1592          -0.09        -0.67  48.86
+               chop        4209      133           1.28         2.17  48.68
+BREAKOUT_BUY   bear        4810      384          -0.11        -0.38  45.18
+               bull       54653     1747           0.80         8.49  49.61
+               chop        2754      143           0.41         1.07  49.67
+
+--- JP h=21d: signal x vol regime ---
+                           n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         vol_regime                                                       
+BREAKDOWN_SELL LOW              5945      384          -0.08        -0.30  47.82
+               MID             12470      698           0.08         0.44  51.23
+               HIGH            22431      863           0.49         2.51  50.31
+BREAKOUT_BUY   LOW             13200      397           0.92         6.14  50.89
+               MID             20288      743           0.34         2.62  48.96
+               HIGH            22711      958           0.64         3.60  48.87
+
+================ KR ================
+
+--- KR h=5d: signal alone ---
+                n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal                                                               
+BREAKDOWN_SELL      43481     2099           0.39         4.39  51.79
+BREAKOUT_BUY        28212     2288           0.91         9.27  49.11
+
+--- KR h=5d: signal x trend regime ---
+                      n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         trend                                                       
+BREAKDOWN_SELL bear       24474      804           0.24         1.68  52.34
+               bull       14673     1143           0.53         4.37  51.67
+               chop        3361      109          -0.01        -0.04  48.80
+BREAKOUT_BUY   bear        7662      869           0.52         2.78  47.96
+               bull       19097     1259           1.21        10.63  49.55
+               chop        1213      117           0.72         2.00  48.97
+
+--- KR h=5d: signal x vol regime ---
+                           n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         vol_regime                                                       
+BREAKDOWN_SELL LOW              3615      248           0.74         3.89  51.15
+               MID             13596      664           0.46         3.62  50.05
+               HIGH            23654      980           0.27         1.70  52.76
+BREAKOUT_BUY   LOW              3396      259           1.34         5.74  52.03
+               MID              9097      711           1.06         6.54  48.47
+               HIGH            13087     1104           0.84         5.21  48.49
+
+--- KR h=21d: signal alone ---
+                n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal                                                               
+BREAKDOWN_SELL      42239     2083           1.58         8.92  52.57
+BREAKOUT_BUY        28178     2274           2.76        12.32  49.78
+
+--- KR h=21d: signal x trend regime ---
+                      n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         trend                                                       
+BREAKDOWN_SELL bear       24474      804           1.63         5.58  53.49
+               bull       13782     1130           1.71         7.14  51.60
+               chop        3010      106           0.42         0.61  50.30
+BREAKOUT_BUY   bear        7661      869           1.56         3.31  47.85
+               bull       19069     1246           3.54        15.88  50.29
+               chop        1208      116           3.60         3.96  52.15
+
+--- KR h=21d: signal x vol regime ---
+                           n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         vol_regime                                                       
+BREAKDOWN_SELL LOW              3617      249           1.35         3.39  51.87
+               MID             13596      664           1.70         6.02  51.11
+               HIGH            22410      963           1.64         5.48  53.48
+BREAKOUT_BUY   LOW              3434      260           4.67         8.24  55.10
+               MID              9097      711           2.39         7.97  48.79
+               HIGH            13015     1089           2.85         7.21  48.97
+
+================ CN ================
+
+--- CN h=5d: signal alone ---
+                n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal                                                               
+BREAKDOWN_SELL      43727     1884           0.02         0.26  49.50
+BREAKOUT_BUY        35160     2285           0.73         8.19  48.96
+
+--- CN h=5d: signal x trend regime ---
+                      n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         trend                                                       
+BREAKDOWN_SELL bear       29271      912           0.09         0.80  50.49
+               bull       11083      831          -0.10        -0.81  47.05
+               chop        3107      115           0.21         0.67  48.44
+BREAKOUT_BUY   bear        8879      947           0.41         2.46  47.38
+               bull       23953     1158           1.09        10.67  49.41
+               chop        1961      137           0.26         0.68  51.96
+
+--- CN h=5d: signal x vol regime ---
+                           n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         vol_regime                                                       
+BREAKDOWN_SELL LOW             10903      430           0.60         4.82  51.50
+               MID             19112      789           0.10         1.09  49.41
+               HIGH            11233      505          -0.31        -1.62  48.62
+BREAKOUT_BUY   LOW              8740      479           0.89         5.50  48.52
+               MID             14986      910           0.87         6.09  51.15
+               HIGH             9409      686           0.68         3.50  46.41
+
+--- CN h=21d: signal alone ---
+                n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal                                                               
+BREAKDOWN_SELL      42652     1868           0.80         5.09  51.78
+BREAKOUT_BUY        34844     2269           2.09        11.37  50.22
+
+--- CN h=21d: signal x trend regime ---
+                      n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         trend                                                       
+BREAKDOWN_SELL bear       28196      896           1.05         4.53  52.61
+               bull       11083      831           0.33         1.39  48.82
+               chop        3107      115           1.87         3.33  54.36
+BREAKOUT_BUY   bear        8563      931           1.62         4.49  49.38
+               bull       23953     1158           2.77        14.05  50.53
+               chop        1961      137           0.57         0.94  51.81
+
+--- CN h=21d: signal x vol regime ---
+                           n_signals  n_dates  mean_excess_%  t_clustered  hit_%
+signal         vol_regime                                                       
+BREAKDOWN_SELL LOW             10330      425           1.34         4.66  53.72
+               MID             18610      778           1.08         4.85  50.02
+               HIGH            11233      505           0.23         0.63  54.19
+BREAKOUT_BUY   LOW              8680      474           2.71         6.37  49.62
+               MID             14730      899           2.89        10.01  52.44
+               HIGH             9409      686           1.15         3.29  47.08
