@@ -1,0 +1,2602 @@
+{
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "nodes": [
+    {
+      "id": "price_prediction_init",
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "price_prediction/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_init_rationale_1",
+      "label": "Sequential price-prediction models: Markov regime chains, Kalman trend filters,…",
+      "file_type": "rationale",
+      "source_file": "price_prediction/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_main",
+      "label": "__main__.py",
+      "file_type": "code",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L19",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_main_rationale_1",
+      "label": "CLI: walk-forward evaluation of Markov / Kalman / LSTM / GRU predictors. python…",
+      "file_type": "rationale",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_data",
+      "label": "data.py",
+      "file_type": "code",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_data_load_panel",
+      "label": "load_panel()",
+      "file_type": "code",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L14",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_data_py_dataframe",
+      "label": "DataFrame",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_data_top_liquid_symbols",
+      "label": "top_liquid_symbols()",
+      "file_type": "code",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L23",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_data_symbol_series",
+      "label": "symbol_series()",
+      "file_type": "code",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L36",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_data_rationale_1",
+      "label": "Panel loading + universe selection for prediction models.",
+      "file_type": "rationale",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_data_rationale_15",
+      "label": "Long panel [Date, Symbol, Open, High, Low, Close, Volume] for a market.",
+      "file_type": "rationale",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_data_rationale_24",
+      "label": "Most-liquid symbols (median daily dollar volume) with a long history.",
+      "file_type": "rationale",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_data_rationale_37",
+      "label": "Clean single-symbol frame indexed by Date with log returns.",
+      "file_type": "rationale",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L37",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_evaluate",
+      "label": "evaluate.py",
+      "file_type": "code",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_evaluate_metrics",
+      "label": "_metrics()",
+      "file_type": "code",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L18",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_evaluate_py_series",
+      "label": "Series",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_evaluate_evaluate_symbol",
+      "label": "evaluate_symbol()",
+      "file_type": "code",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L36",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_evaluate_py_dataframe",
+      "label": "DataFrame",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_evaluate_evaluate_universe",
+      "label": "evaluate_universe()",
+      "file_type": "code",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L90",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_evaluate_rationale_1",
+      "label": "Walk-forward evaluation of prediction models against naive baselines. Protocol:…",
+      "file_type": "rationale",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_evaluate_rationale_38",
+      "label": "df: symbol frame from data.symbol_series. Returns metric rows per model.",
+      "file_type": "rationale",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L38",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_kalman_trend",
+      "label": "kalman_trend.py",
+      "file_type": "code",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_kalman_trend_kalmantrendmodel",
+      "label": "KalmanTrendModel",
+      "file_type": "code",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L19",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_kalman_trend_kalmantrendmodel_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L20",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_kalman_trend_kalmantrendmodel_filter",
+      "label": ".filter()",
+      "file_type": "code",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L26",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_kalman_trend_py_series",
+      "label": "Series",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_kalman_trend_py_dataframe",
+      "label": "DataFrame",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_kalman_trend_kalmantrendmodel_predict_return",
+      "label": ".predict_return()",
+      "file_type": "code",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L47",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_kalman_trend_rationale_1",
+      "label": "Local-linear-trend Kalman filter on log price (pure numpy). State x = [level,…",
+      "file_type": "rationale",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_kalman_trend_rationale_27",
+      "label": "Run the filter forward; returns level, slope, innovation per day.",
+      "file_type": "rationale",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_kalman_trend_rationale_48",
+      "label": "E[next-day log return] at each t, using data up to t only.",
+      "file_type": "rationale",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L48",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model",
+      "label": "lstm_model.py",
+      "file_type": "code",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_build_features",
+      "label": "build_features()",
+      "file_type": "code",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L18",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_py_dataframe",
+      "label": "DataFrame",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_seqnet",
+      "label": "SeqNet",
+      "file_type": "code",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L30",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_seqnet_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L31",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_seqnet_forward",
+      "label": ".forward()",
+      "file_type": "code",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L37",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_make_windows",
+      "label": "make_windows()",
+      "file_type": "code",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L42",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_py_ndarray",
+      "label": "ndarray",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_seqmodel",
+      "label": "SeqModel",
+      "file_type": "code",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L50",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_seqmodel_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L53",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_seqmodel_fit",
+      "label": ".fit()",
+      "file_type": "code",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L61",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_py_series",
+      "label": "Series",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_seqmodel_predict",
+      "label": ".predict()",
+      "file_type": "code",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L84",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_rationale_1",
+      "label": "LSTM / GRU next-day return prediction (PyTorch). Input: sliding windows of…",
+      "file_type": "rationale",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_rationale_51",
+      "label": "Train-once-per-refit wrapper used by the walk-forward loop.",
+      "file_type": "rationale",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L51",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_lstm_model_rationale_85",
+      "label": "One prediction per row that has a full lookback window behind it.",
+      "file_type": "rationale",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L85",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime",
+      "label": "markov_regime.py",
+      "file_type": "code",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime_label_states",
+      "label": "label_states()",
+      "file_type": "code",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L17",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime_py_series",
+      "label": "Series",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime_markovregimemodel",
+      "label": "MarkovRegimeModel",
+      "file_type": "code",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L34",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime_markovregimemodel_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime_markovregimemodel_fit",
+      "label": ".fit()",
+      "file_type": "code",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L41",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime_markovregimemodel_predict_return",
+      "label": ".predict_return()",
+      "file_type": "code",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L55",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime_markovregimemodel_predict_proba",
+      "label": ".predict_proba()",
+      "file_type": "code",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L61",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime_py_ndarray",
+      "label": "ndarray",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime_rationale_1",
+      "label": "First-order Markov chain over discrete market regimes. States are formed from…",
+      "file_type": "rationale",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime_rationale_19",
+      "label": "3 regimes from rolling annualised trend, banded by rolling vol. bull = rolling…",
+      "file_type": "rationale",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_markov_regime_rationale_56",
+      "label": "E[next-day return] = sum_k P(next=k | now) * E[ret | state k].",
+      "file_type": "rationale",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L56",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_replay",
+      "label": "replay.py",
+      "file_type": "code",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_replay_rsi14",
+      "label": "_rsi14()",
+      "file_type": "code",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L39",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_replay_py_dataframe",
+      "label": "DataFrame",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_replay_wide",
+      "label": "_wide()",
+      "file_type": "code",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L46",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_replay_build_signals",
+      "label": "build_signals()",
+      "file_type": "code",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L51",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_replay_clustered_stats",
+      "label": "clustered_stats()",
+      "file_type": "code",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L135",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_replay_run_market",
+      "label": "run_market()",
+      "file_type": "code",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L152",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_replay_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L165",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_replay_rationale_1",
+      "label": "Full historical replay: screener recommends, regime gates, outcomes judge.…",
+      "file_type": "rationale",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_replay_rationale_52",
+      "label": "Return (signals long-frame, per-date market/regime frame).",
+      "file_type": "rationale",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L52",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_replay_rationale_137",
+      "label": "Per-date means first, then t across dates. Cells under min_dates dropped.",
+      "file_type": "rationale",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L137",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme",
+      "label": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_price_prediction_backtest",
+      "label": "price_prediction_backtest",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_headline_result_us_top_20_liquid_500_oos_days_ending_2026_07",
+      "label": "Headline result (US, top-20 liquid, 500 OOS days ending 2026-07)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "readme_run",
+      "label": "Run",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "README.md",
+      "source_location": "L29",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_accuracy_reliability_matrix",
+      "label": "ACCURACY_RELIABILITY_MATRIX.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/ACCURACY_RELIABILITY_MATRIX.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_accuracy_reliability_matrix_accuracy_vs_reliability_matrix_price_prediction_techniques",
+      "label": "Accuracy vs. Reliability Matrix — price-prediction techniques",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ACCURACY_RELIABILITY_MATRIX.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_accuracy_reliability_matrix_the_pattern",
+      "label": "The pattern",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ACCURACY_RELIABILITY_MATRIX.md",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_accuracy_reliability_matrix_sources",
+      "label": "Sources",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/ACCURACY_RELIABILITY_MATRIX.md",
+      "source_location": "L30",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_historical_replay",
+      "label": "HISTORICAL_REPLAY.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_historical_replay_full_historical_replay_screener_recommends_regime_gates_outcomes_judge",
+      "label": "Full historical replay — screener recommends, regime gates, outcomes judge",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_historical_replay_headline_buy_trend_regime_21_day_excess_vs_market_median_t_clustered",
+      "label": "Headline: BUY × trend regime, 21-day excess vs market median (t clustered)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_historical_replay_breakdown_sell_is_contrarian_not_a_short_signal",
+      "label": "BREAKDOWN_SELL is contrarian, not a short signal",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_historical_replay_vol_regime_low_mid_vol_is_breakout_friendly_high_vol_is_not",
+      "label": "Vol regime: LOW/MID vol is breakout-friendly; HIGH vol is not",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L35",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_historical_replay_cross_check_vs_the_stored_market_playbook_market_playbook_md",
+      "label": "Cross-check vs the stored market playbook (MARKET_PLAYBOOK.md)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L43",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_historical_replay_caveats",
+      "label": "Caveats",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L55",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_historical_replay_reproduce",
+      "label": "Reproduce",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L67",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_walkforward_multimarket",
+      "label": "WALKFORWARD_MULTIMARKET.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/WALKFORWARD_MULTIMARKET.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_walkforward_multimarket_walk_forward_next_day_prediction_five_market_comparison",
+      "label": "Walk-forward next-day prediction — five-market comparison",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/WALKFORWARD_MULTIMARKET.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_walkforward_multimarket_read",
+      "label": "Read",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/WALKFORWARD_MULTIMARKET.md",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_watchlist_validation",
+      "label": "WATCHLIST_VALIDATION.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_watchlist_validation_watchlist_recommendations_vs_actual_performance_small_sample_validation",
+      "label": "Watchlist recommendations vs. actual performance — small-sample validation",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_watchlist_validation_by_market_horizon",
+      "label": "By market × horizon",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_watchlist_validation_by_signal_type",
+      "label": "By signal type",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_watchlist_validation_by_volatility_regime_at_signal_date",
+      "label": "By volatility regime at signal date",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_watchlist_validation_findings",
+      "label": "Findings",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L36",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_watchlist_validation_design_for_the_full_historical_extension",
+      "label": "Design for the full historical extension",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L55",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_readme",
+      "label": "price_prediction/README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_readme_price_prediction_sequential_models_for_next_day_return_forecasting",
+      "label": "price_prediction — sequential models for next-day return forecasting",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_readme_models",
+      "label": "Models",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_readme_baselines_any_model_must_beat_these_to_matter",
+      "label": "Baselines (any model must beat these to matter)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_readme_protocol",
+      "label": "Protocol",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_readme_run",
+      "label": "Run",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L31",
+      "_origin": "ast"
+    },
+    {
+      "id": "price_prediction_readme_caveats",
+      "label": "Caveats",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L40",
+      "_origin": "ast"
+    }
+  ],
+  "links": [
+    {
+      "source": "price_prediction_init_rationale_1",
+      "target": "price_prediction_init",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main",
+      "target": "argparse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main",
+      "target": "price_prediction_data",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main",
+      "target": "price_prediction_evaluate",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main",
+      "target": "price_prediction_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main_rationale_1",
+      "target": "price_prediction_main",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data",
+      "target": "numpy",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data",
+      "target": "price_prediction_data_load_panel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data_load_panel",
+      "target": "price_prediction_data_py_dataframe",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data",
+      "target": "price_prediction_data_top_liquid_symbols",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data_top_liquid_symbols",
+      "target": "price_prediction_data_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data",
+      "target": "price_prediction_data_symbol_series",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data_symbol_series",
+      "target": "price_prediction_data_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data_rationale_1",
+      "target": "price_prediction_data",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data_rationale_15",
+      "target": "price_prediction_data_load_panel",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data_rationale_24",
+      "target": "price_prediction_data_top_liquid_symbols",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_data_rationale_37",
+      "target": "price_prediction_data_symbol_series",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/data.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "numpy",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "price_prediction_kalman_trend",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "price_prediction_markov_regime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "price_prediction_evaluate_metrics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_metrics",
+      "target": "price_prediction_evaluate_py_series",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "price_prediction_evaluate_evaluate_symbol",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_symbol",
+      "target": "price_prediction_evaluate_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "price_prediction_evaluate_evaluate_universe",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_universe",
+      "target": "price_prediction_evaluate_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_symbol",
+      "target": "price_prediction_evaluate_metrics",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_universe",
+      "target": "price_prediction_evaluate_evaluate_symbol",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_rationale_1",
+      "target": "price_prediction_evaluate",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_rationale_38",
+      "target": "price_prediction_evaluate_evaluate_symbol",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend",
+      "target": "numpy",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend",
+      "target": "price_prediction_kalman_trend_kalmantrendmodel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend_kalmantrendmodel",
+      "target": "price_prediction_kalman_trend_kalmantrendmodel_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend_kalmantrendmodel",
+      "target": "price_prediction_kalman_trend_kalmantrendmodel_filter",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend_kalmantrendmodel_filter",
+      "target": "price_prediction_kalman_trend_py_series",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend_kalmantrendmodel_filter",
+      "target": "price_prediction_kalman_trend_py_dataframe",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend_kalmantrendmodel",
+      "target": "price_prediction_kalman_trend_kalmantrendmodel_predict_return",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend_kalmantrendmodel_predict_return",
+      "target": "price_prediction_kalman_trend_py_series",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend_rationale_1",
+      "target": "price_prediction_kalman_trend",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend_rationale_27",
+      "target": "price_prediction_kalman_trend_kalmantrendmodel_filter",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_kalman_trend_rationale_48",
+      "target": "price_prediction_kalman_trend_kalmantrendmodel_predict_return",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/kalman_trend.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model",
+      "target": "numpy",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model",
+      "target": "torch",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model",
+      "target": "torch_nn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model",
+      "target": "price_prediction_lstm_model_build_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_build_features",
+      "target": "price_prediction_lstm_model_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model",
+      "target": "price_prediction_lstm_model_seqnet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqnet",
+      "target": "price_prediction_lstm_model_seqnet_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqnet",
+      "target": "price_prediction_lstm_model_seqnet_forward",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model",
+      "target": "price_prediction_lstm_model_make_windows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_make_windows",
+      "target": "price_prediction_lstm_model_py_ndarray",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model",
+      "target": "price_prediction_lstm_model_seqmodel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqmodel",
+      "target": "price_prediction_lstm_model_seqmodel_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqmodel",
+      "target": "price_prediction_lstm_model_seqmodel_fit",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqmodel_fit",
+      "target": "price_prediction_lstm_model_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqmodel_fit",
+      "target": "price_prediction_lstm_model_py_series",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqmodel",
+      "target": "price_prediction_lstm_model_seqmodel_predict",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqmodel_predict",
+      "target": "price_prediction_lstm_model_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqmodel_predict",
+      "target": "price_prediction_lstm_model_py_series",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqnet_init",
+      "target": "price_prediction_lstm_model_seqmodel_init",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqmodel_fit",
+      "target": "price_prediction_lstm_model_make_windows",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqmodel_fit",
+      "target": "price_prediction_lstm_model_seqnet",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_seqmodel_predict",
+      "target": "price_prediction_lstm_model_make_windows",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_rationale_1",
+      "target": "price_prediction_lstm_model",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_rationale_51",
+      "target": "price_prediction_lstm_model_seqmodel",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_lstm_model_rationale_85",
+      "target": "price_prediction_lstm_model_seqmodel_predict",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/lstm_model.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime",
+      "target": "numpy",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime",
+      "target": "price_prediction_markov_regime_label_states",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime_label_states",
+      "target": "price_prediction_markov_regime_py_series",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime",
+      "target": "price_prediction_markov_regime_markovregimemodel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime_markovregimemodel",
+      "target": "price_prediction_markov_regime_markovregimemodel_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime_markovregimemodel",
+      "target": "price_prediction_markov_regime_markovregimemodel_fit",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime_markovregimemodel_fit",
+      "target": "price_prediction_markov_regime_py_series",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime_markovregimemodel",
+      "target": "price_prediction_markov_regime_markovregimemodel_predict_return",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime_markovregimemodel",
+      "target": "price_prediction_markov_regime_markovregimemodel_predict_proba",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime_markovregimemodel_predict_proba",
+      "target": "price_prediction_markov_regime_py_ndarray",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime_rationale_1",
+      "target": "price_prediction_markov_regime",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime_rationale_19",
+      "target": "price_prediction_markov_regime_label_states",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_markov_regime_rationale_56",
+      "target": "price_prediction_markov_regime_markovregimemodel_predict_return",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/markov_regime.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "argparse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "numpy",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "pandas",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "price_prediction_data",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "price_prediction_replay_rsi14",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_rsi14",
+      "target": "price_prediction_replay_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "price_prediction_replay_wide",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_wide",
+      "target": "price_prediction_replay_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "price_prediction_replay_build_signals",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_build_signals",
+      "target": "price_prediction_replay_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "price_prediction_replay_clustered_stats",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_clustered_stats",
+      "target": "price_prediction_replay_py_dataframe",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "price_prediction_replay_run_market",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "price_prediction_replay_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L165",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_build_signals",
+      "target": "price_prediction_replay_wide",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_build_signals",
+      "target": "price_prediction_replay_rsi14",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_run_market",
+      "target": "price_prediction_replay_build_signals",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L154",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_run_market",
+      "target": "price_prediction_replay_clustered_stats",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L158",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_main",
+      "target": "price_prediction_replay_run_market",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L174",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_rationale_1",
+      "target": "price_prediction_replay",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_rationale_52",
+      "target": "price_prediction_replay_build_signals",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_rationale_137",
+      "target": "price_prediction_replay_clustered_stats",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme",
+      "target": "readme_price_prediction_backtest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme",
+      "target": "price_prediction_readme",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_price_prediction_backtest",
+      "target": "readme_headline_result_us_top_20_liquid_500_oos_days_ending_2026_07",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "readme_price_prediction_backtest",
+      "target": "readme_run",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_accuracy_reliability_matrix",
+      "target": "docs_accuracy_reliability_matrix_accuracy_vs_reliability_matrix_price_prediction_techniques",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ACCURACY_RELIABILITY_MATRIX.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_accuracy_reliability_matrix_accuracy_vs_reliability_matrix_price_prediction_techniques",
+      "target": "docs_accuracy_reliability_matrix_the_pattern",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ACCURACY_RELIABILITY_MATRIX.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_accuracy_reliability_matrix_accuracy_vs_reliability_matrix_price_prediction_techniques",
+      "target": "docs_accuracy_reliability_matrix_sources",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ACCURACY_RELIABILITY_MATRIX.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_historical_replay",
+      "target": "docs_historical_replay_full_historical_replay_screener_recommends_regime_gates_outcomes_judge",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_historical_replay_full_historical_replay_screener_recommends_regime_gates_outcomes_judge",
+      "target": "docs_historical_replay_headline_buy_trend_regime_21_day_excess_vs_market_median_t_clustered",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_historical_replay_full_historical_replay_screener_recommends_regime_gates_outcomes_judge",
+      "target": "docs_historical_replay_breakdown_sell_is_contrarian_not_a_short_signal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_historical_replay_full_historical_replay_screener_recommends_regime_gates_outcomes_judge",
+      "target": "docs_historical_replay_vol_regime_low_mid_vol_is_breakout_friendly_high_vol_is_not",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_historical_replay_full_historical_replay_screener_recommends_regime_gates_outcomes_judge",
+      "target": "docs_historical_replay_cross_check_vs_the_stored_market_playbook_market_playbook_md",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_historical_replay_full_historical_replay_screener_recommends_regime_gates_outcomes_judge",
+      "target": "docs_historical_replay_caveats",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_historical_replay_full_historical_replay_screener_recommends_regime_gates_outcomes_judge",
+      "target": "docs_historical_replay_reproduce",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/HISTORICAL_REPLAY.md",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_walkforward_multimarket",
+      "target": "docs_walkforward_multimarket_walk_forward_next_day_prediction_five_market_comparison",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/WALKFORWARD_MULTIMARKET.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_walkforward_multimarket_walk_forward_next_day_prediction_five_market_comparison",
+      "target": "docs_walkforward_multimarket_read",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/WALKFORWARD_MULTIMARKET.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_watchlist_validation",
+      "target": "docs_watchlist_validation_watchlist_recommendations_vs_actual_performance_small_sample_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_watchlist_validation_watchlist_recommendations_vs_actual_performance_small_sample_validation",
+      "target": "docs_watchlist_validation_by_market_horizon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_watchlist_validation_watchlist_recommendations_vs_actual_performance_small_sample_validation",
+      "target": "docs_watchlist_validation_by_signal_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_watchlist_validation_watchlist_recommendations_vs_actual_performance_small_sample_validation",
+      "target": "docs_watchlist_validation_by_volatility_regime_at_signal_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_watchlist_validation_watchlist_recommendations_vs_actual_performance_small_sample_validation",
+      "target": "docs_watchlist_validation_findings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_watchlist_validation_watchlist_recommendations_vs_actual_performance_small_sample_validation",
+      "target": "docs_watchlist_validation_design_for_the_full_historical_extension",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/WATCHLIST_VALIDATION.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_readme",
+      "target": "price_prediction_readme_price_prediction_sequential_models_for_next_day_return_forecasting",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_readme_price_prediction_sequential_models_for_next_day_return_forecasting",
+      "target": "price_prediction_readme_models",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_readme_price_prediction_sequential_models_for_next_day_return_forecasting",
+      "target": "price_prediction_readme_baselines_any_model_must_beat_these_to_matter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_readme_price_prediction_sequential_models_for_next_day_return_forecasting",
+      "target": "price_prediction_readme_protocol",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_readme_price_prediction_sequential_models_for_next_day_return_forecasting",
+      "target": "price_prediction_readme_run",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_readme_price_prediction_sequential_models_for_next_day_return_forecasting",
+      "target": "price_prediction_readme_caveats",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/README.md",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main",
+      "target": "price_prediction_data_load_panel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main",
+      "target": "price_prediction_data_top_liquid_symbols",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main",
+      "target": "price_prediction_evaluate_evaluate_universe",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "price_prediction_kalman_trend_kalmantrendmodel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "price_prediction_markov_regime_markovregimemodel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "price_prediction_markov_regime_label_states",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "price_prediction_lstm_model_seqmodel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "price_prediction_lstm_model_build_features",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate",
+      "target": "price_prediction_data_symbol_series",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay",
+      "target": "price_prediction_data_load_panel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main_main",
+      "target": "price_prediction_data_load_panel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main_main",
+      "target": "price_prediction_data_top_liquid_symbols",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_main_main",
+      "target": "price_prediction_evaluate_evaluate_universe",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/__main__.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_symbol",
+      "target": "price_prediction_kalman_trend_kalmantrendmodel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_symbol",
+      "target": "price_prediction_markov_regime_label_states",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_symbol",
+      "target": "price_prediction_lstm_model_build_features",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_symbol",
+      "target": "price_prediction_markov_regime_markovregimemodel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_symbol",
+      "target": "price_prediction_lstm_model_seqmodel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_universe",
+      "target": "price_prediction_data_symbol_series",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_replay_run_market",
+      "target": "price_prediction_data_load_panel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "price_prediction/replay.py",
+      "source_location": "L154",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_symbol",
+      "target": "price_prediction_kalman_trend_kalmantrendmodel",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L55",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_symbol",
+      "target": "price_prediction_markov_regime_markovregimemodel",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L69",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "price_prediction_evaluate_evaluate_symbol",
+      "target": "price_prediction_lstm_model_seqmodel",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "price_prediction/evaluate.py",
+      "source_location": "L75",
+      "weight": 0.8,
+      "_origin": "ast"
+    }
+  ],
+  "directed": false
+}
