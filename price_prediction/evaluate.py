@@ -58,7 +58,7 @@ def evaluate_symbol(df: pd.DataFrame, test_days: int = 500, refit_every: int = 1
     # --- Markov + sequence nets: expanding-window refits -----------------
     states_all = label_states(ret)
     feats_all = build_features(df)
-    seq_specs = seq_models or {"lstm": {}, "gru": {}}
+    seq_specs = {"lstm": {}, "gru": {}} if seq_models is None else seq_models
     markov_p, seq_p = [], {k: [] for k in seq_specs}
     starts = list(range(0, test_days, refit_every))
     for s in starts:
