@@ -40,6 +40,6 @@ def symbol_series(panel: pd.DataFrame, symbol: str) -> pd.DataFrame:
     df = df[~df.index.duplicated(keep="last")]
     df["log_ret"] = np.log(df["Close"]).diff()
     # Drop absurd jumps (bad ticks / unflagged splits) rather than model them
+    # (no recompute afterwards: across a dropped split day it would re-create the jump)
     df = df[df["log_ret"].abs().fillna(0) < 0.5]
-    df["log_ret"] = np.log(df["Close"]).diff()
     return df.dropna(subset=["log_ret"])
