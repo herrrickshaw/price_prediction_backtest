@@ -109,7 +109,7 @@ def build_signals(panel: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     vol_pct = vol21.expanding(252).apply(
         lambda w: (w[:-1] <= w[-1]).mean() if len(w) > 1 else np.nan, raw=True)
     vol_reg = pd.cut(vol_pct, [0, 1 / 3, 2 / 3, 1.0001],
-                     labels=["LOW", "MID", "HIGH"])
+                     labels=["LOW", "MID", "HIGH"], include_lowest=True)
     dates = pd.DataFrame({
         "trend": trend.map(TREND_NAMES).reindex(idx_ret.index),
         "vol_regime": vol_reg,
