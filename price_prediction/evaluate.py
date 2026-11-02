@@ -98,13 +98,13 @@ def walk_forward_predictions(df: pd.DataFrame, test_idx: pd.DatetimeIndex, refit
 
 def evaluate_symbol(df: pd.DataFrame, test_days: int = 500, refit_every: int = 125,
                     seq_models: dict[str, dict] | None = None,
-                    seq_model_factory: SeqModelFactory = _default_seq_model_factory,
-                    ) -> pd.DataFrame:
+                    seq_model_factory: SeqModelFactory | None = None) -> pd.DataFrame:
     """Metric rows per model for one symbol frame (from ``data.symbol_series``).
 
     ``seq_models`` maps sequence-model name -> constructor kwargs (default:
     ``{"lstm": {}, "gru": {}}``); pass ``{}`` to skip the nets entirely.
-    ``seq_model_factory`` builds them and can be swapped for a stub in tests.
+    ``seq_model_factory`` builds them (default: the PyTorch ``SeqModel``) and
+    can be swapped for a stub in tests.
     """
     ret = df["log_ret"]
     if len(ret) < test_days + MIN_TRAIN_DAYS:
@@ -112,10 +112,11 @@ def evaluate_symbol(df: pd.DataFrame, test_days: int = 500, refit_every: int = 1
     actual = ret.shift(-1)  # realised next-day return, aligned to prediction day
     test_idx = ret.index[-test_days:]
     specs = DEFAULT_SEQ_MODELS if seq_models is None else seq_models
+    factory = seq_model_factory or _default_seq_model_factory
 
     preds: dict[str, pd.Series] = {name: fn(ret, test_idx) for name, fn in BASELINES.items()}
     preds["kalman"] = kalman_predictions(df, test_idx)
-    preds.update(walk_forward_predictions(df, test_idx, refit_every, specs, seq_model_factory))
+    preds.update(walk_forward_predictions(df, test_idx, refit_every, specs, factory))
 
     rows = [{"model": name, **metrics(p, actual.reindex(test_idx))} for name, p in preds.items()]
     return pd.DataFrame(rows).set_index("model")
