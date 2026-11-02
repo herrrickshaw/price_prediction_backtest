@@ -11,6 +11,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
+from .features import build_features
 from .kalman_trend import KalmanTrendModel
 from .markov_regime import MarkovRegimeModel, label_states
 
@@ -36,7 +37,7 @@ def _metrics(pred: pd.Series, actual: pd.Series) -> dict:
 def evaluate_symbol(df: pd.DataFrame, test_days: int = 500, refit_every: int = 125,
                     seq_models: dict | None = None) -> pd.DataFrame:
     """df: symbol frame from data.symbol_series. Returns metric rows per model."""
-    from .lstm_model import SeqModel, build_features
+    from .lstm_model import SeqModel  # torch import deferred to first use
 
     ret = df["log_ret"]
     if len(ret) < test_days + 750:
