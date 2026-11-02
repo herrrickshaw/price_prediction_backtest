@@ -23,4 +23,5 @@ ignore = ["B905"]  # zip(strict=) is Python 3.10+
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 addopts = "-q"
