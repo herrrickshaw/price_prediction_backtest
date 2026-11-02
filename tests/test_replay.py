@@ -57,3 +57,20 @@ def test_box_excludes_current_bar():
 def test_build_signals_rejects_shallow_panel(small_panel):
     with pytest.raises(ValueError, match="panel too shallow"):
         replay.build_signals(small_panel)
+
+
+def test_run_market_with_injected_loader(wide_panel, tmp_path, capsys):
+    pytest.importorskip("pyarrow")
+    replay.run_market("XX", tmp_path, load=lambda market: wide_panel)
+    assert (tmp_path / "replay_signals_xx.parquet").exists()
+    out = capsys.readouterr().out
+    assert "XX h=21d: signal x trend regime" in out
+
+
+def test_main_logs_failed_market(monkeypatch, tmp_path, caplog):
+    def boom(market):
+        raise ValueError("no panel")
+
+    monkeypatch.setattr(replay, "load_panel", boom)
+    replay.main(["--market", "ZZ", "--out", str(tmp_path)])
+    assert "ZZ: FAILED" in caplog.text
