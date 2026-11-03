@@ -2,6 +2,21 @@
 
 Guidance for Claude Code sessions working in this repository.
 
+## Layout and commands
+- Package `price_prediction/`: `data.py` (parquet I/O, universe), `baselines.py`, `markov_regime.py`,
+  `kalman_trend.py`, `features.py` (torch-free), `lstm_model.py` (optional torch), `evaluate.py`
+  (walk-forward harness), `replay.py` (regime-gated Darvas replay), `__main__.py` (CLI).
+- Run: `python -m price_prediction --market US --top 20 --test-days 500`;
+  `python -m price_prediction.replay --market US IN JP KR CN`. Panels come from `$LTM_DIR`.
+- Verify: `ruff check .` and `pytest -q` (synthetic seeded series only; LSTM tests skip without torch).
+
+## Rules
+- The Darvas box in `replay.darvas_signals` is built with `.shift(1)`: the current bar is always
+  excluded from its own box. Never change that.
+- Never download market data in tests; never commit panels. `reports/` and `graphify-out/` are
+  generated artefacts — do not hand-edit.
+- Behaviour-preserving refactors only; `tests/fixtures/baseline.json` pins the pre-refactor outputs.
+
 <!-- source-fetch-toolkit:v1 (managed by ~/bin/add_source_fetch_section.py — edit there, not here) -->
 ## Source fetching for data collection & literature surveys
 

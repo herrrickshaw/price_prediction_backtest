@@ -32,13 +32,16 @@ def label_states(log_ret: pd.Series, trend_win: int = 21, vol_win: int = 21,
 
 
 class MarkovRegimeModel:
+    """First-order chain over ``n_states`` regimes with Laplace-smoothed transitions."""
+
     def __init__(self, n_states: int = 3, laplace: float = 1.0):
         self.n = n_states
         self.laplace = laplace
         self.T = np.full((n_states, n_states), 1.0 / n_states)
         self.state_ret = np.zeros(n_states)
 
-    def fit(self, states: pd.Series, log_ret: pd.Series) -> "MarkovRegimeModel":
+    def fit(self, states: pd.Series, log_ret: pd.Series) -> MarkovRegimeModel:
+        """Estimate transitions and E[next-day return | state]; warm-up (-1) rows ignored."""
         s = states[states >= 0]
         counts = np.full((self.n, self.n), self.laplace)
         prev, nxt = s.values[:-1], s.values[1:]
@@ -59,6 +62,7 @@ class MarkovRegimeModel:
         return float(self.T[current_state] @ self.state_ret)
 
     def predict_proba(self, current_state: int) -> np.ndarray:
+        """P(next state | current state); uniform during warm-up."""
         if current_state < 0:
             return np.full(self.n, 1.0 / self.n)
         return self.T[current_state]

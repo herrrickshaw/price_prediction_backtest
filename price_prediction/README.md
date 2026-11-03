@@ -10,11 +10,13 @@ and is scored on the realised return of day *t+1*.
 |---|---|---|
 | Markov regime chain | `markov_regime.py` | 3 regimes (bear/chop/bull) from rolling trend vs. vol; first-order transition matrix; E[next ret] = T[state] · E[ret\|state] |
 | Kalman trend filter | `kalman_trend.py` | Local-linear-trend state space on log price; filtered slope = expected next-day log return; fully online/causal |
-| LSTM / GRU | `lstm_model.py` | 42-day windows of (return, vol, range, volume-z, momentum) → next-day return; scaling fit on train only |
+| LSTM / GRU | `lstm_model.py` (+ `features.py`) | 42-day windows of (return, vol, range, volume-z, momentum) → next-day return; scaling fit on train only |
 
 ## Baselines (any model must beat these to matter)
 
 - `naive_zero` — predict ~0 (equivalent to always-long / buy & hold)
+
+All three live in `baselines.py` (`BASELINES` registry).
 - `naive_yesterday` — 1-day momentum (yesterday's return as forecast)
 - `naive_histmean` — expanding historical mean return
 
@@ -31,9 +33,13 @@ and is scored on the realised return of day *t+1*.
 ## Run
 
 ```bash
-~/.venvs/testing/bin/python -m price_prediction --market US --top 20 --test-days 500
-~/.venvs/testing/bin/python -m price_prediction --market IN --symbols RELIANCE TCS
+python -m price_prediction --market US --top 20 --test-days 500
+python -m price_prediction --market IN --symbols RELIANCE TCS
 ```
+
+PyTorch is optional: without it the harness still runs Markov, Kalman and the
+baselines (`evaluate_symbol(..., seq_models={})`); torch is imported only when
+the nets are built.
 
 Per-symbol results land in `reports/price_prediction_<market>.csv`.
 

@@ -9,22 +9,13 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 import torch
-import torch.nn as nn
+from torch import nn
 
-torch.manual_seed(42)
+from .features import build_features  # noqa: F401  (re-export; moved to features.py)
+
+SEED = 42
 DEVICE = "cpu"  # tiny nets; MPS launch overhead beats any gain
-
-
-def build_features(df: pd.DataFrame) -> pd.DataFrame:
-    f = pd.DataFrame(index=df.index)
-    f["ret"] = df["log_ret"]
-    f["vol21"] = df["log_ret"].rolling(21).std()
-    f["range"] = (df["High"] - df["Low"]) / df["Close"]
-    vol_mu = df["Volume"].rolling(63).mean()
-    vol_sd = df["Volume"].rolling(63).std()
-    f["vol_z"] = (df["Volume"] - vol_mu) / vol_sd.replace(0, np.nan)
-    f["mom5"] = df["log_ret"].rolling(5).sum()
-    return f.dropna()
+torch.manual_seed(SEED)
 
 
 class SeqNet(nn.Module):
@@ -58,7 +49,7 @@ class SeqModel:
         self.mu = self.sd = None
         self.target_sd = 1.0
 
-    def fit(self, feat_df: pd.DataFrame, target: pd.Series) -> "SeqModel":
+    def fit(self, feat_df: pd.DataFrame, target: pd.Series) -> SeqModel:
         feat = feat_df.values
         self.mu, self.sd = feat.mean(0), feat.std(0) + 1e-9
         z = (feat - self.mu) / self.sd
