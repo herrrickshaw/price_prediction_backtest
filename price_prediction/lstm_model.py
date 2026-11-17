@@ -84,9 +84,12 @@ class SeqModel:
     def predict(self, feat_df: pd.DataFrame) -> pd.Series:
         """One prediction per row that has a full lookback window behind it."""
         z = (feat_df.values - self.mu) / self.sd
-        X, _ = make_windows(z, np.zeros(len(z)), self.lookback)
+        # window ending at row t (inclusive) -> forecast of ret[t+1], labelled t, matching training
+        # (window [i-lookback, i) -> target[i]) and evaluate.py (pred at t vs ret.shift(-1)).
+        X = np.array([z[i - self.lookback:i] for i in range(self.lookback, len(z) + 1)],
+                     dtype=np.float32)
         self.net.eval()
         with torch.no_grad():
             preds = self.net(torch.tensor(X, dtype=torch.float32, device=DEVICE))
         preds = preds.cpu().numpy() * self.target_sd
-        return pd.Series(preds, index=feat_df.index[self.lookback:])
+        return pd.Series(preds, index=feat_df.index[self.lookback - 1:])
