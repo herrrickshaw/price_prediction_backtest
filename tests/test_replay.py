@@ -282,3 +282,136 @@ def test_main_defaults(tmp_path, monkeypatch):
     R.main()
     assert [c[0] for c in calls] == ["US", "IN", "JP", "KR", "CN"]
     assert calls[0][1] == str(tmp_path / "reports") and (tmp_path / "reports").is_dir()
+
+
+# ── boundary cases found by mutation testing ─────────────────────────────────
+def design_panel(kind, n=330, bar=300):
+    """60 random names + one designed name. `buy`: flat cap 105 then 106; the bar before the break closes exactly
+    on the cap (prev close == prev box high). `sell`: mirror image with a floor at 95."""
+    dates = pd.bdate_range("2020-01-01", periods=n)
+    rng = np.random.RandomState(1)
+    frames = []
+    for i in range(60):
+        close = 100 + np.cumsum(rng.normal(0.02, 0.5, n)) * 0.3
+        frames.append(pd.DataFrame({"Date": dates, "Symbol": f"S{i:02d}", "Open": close, "High": close, "Low": close,
+                                    "Close": close, "Volume": 1e5 * (1 + i)}))
+    wave = 100 + 2.5 * np.sin(np.arange(n) * 1.3)
+    if kind == "buy":
+        d = np.minimum(wave + 2.5, 105.0)
+        d[bar - 2], d[bar - 1], d[bar], d[bar + 1:] = 105.0, 105.0, 106.0, 106.0
+    else:
+        d = np.maximum(wave - 2.5, 95.0)
+        d[bar - 2], d[bar - 1], d[bar], d[bar + 1:] = 95.0, 95.0, 94.0, 94.0
+    frames.append(pd.DataFrame({"Date": dates, "Symbol": "DESIGN", "Open": d, "High": d, "Low": d, "Close": d, "Volume": 1e9}))
+    return pd.concat(frames, ignore_index=True), dates
+
+
+def design_dates(sig, name):
+    return set(sig[(sig.Symbol == "DESIGN") & (sig.signal == name)].Date)
+
+
+def flat_rsi(value):
+    def f(close):
+        return pd.DataFrame(value, index=close.index, columns=close.columns)
+    return f
+
+
+def test_breakout_fires_when_yesterdays_close_equals_yesterdays_box_high():
+    p, dates = design_panel("buy")
+    sig, _ = R.build_signals(p)
+    assert dates[300] in design_dates(sig, "BREAKOUT_BUY")
+
+
+def test_breakdown_fires_when_yesterdays_close_equals_yesterdays_box_low():
+    p, dates = design_panel("sell")
+    sig, _ = R.build_signals(p)
+    assert dates[300] in design_dates(sig, "BREAKDOWN_SELL")
+
+
+@pytest.mark.parametrize("rsi,fires", [(49.999, False), (50.0, True), (80.0, True), (80.001, False)])
+def test_rsi_window_is_inclusive_at_both_ends(monkeypatch, rsi, fires):
+    p, dates = design_panel("buy")
+    monkeypatch.setattr(R, "_rsi14", flat_rsi(rsi))
+    sig, _ = R.build_signals(p)
+    assert (dates[300] in design_dates(sig, "BREAKOUT_BUY")) is fires
+
+
+def test_sell_requires_the_close_below_the_ema(monkeypatch):
+    p, dates = design_panel("sell")
+    sig, _ = R.build_signals(p)
+    close = R._wide(p, "Close")
+    ema = close.ewm(span=50, min_periods=50).mean()
+    assert close.at[dates[300], "DESIGN"] < ema.at[dates[300], "DESIGN"]
+    up = p.copy()
+    up.loc[(up.Symbol == "DESIGN") & (up.Date < dates[290]), ["Close", "High", "Low", "Open"]] = 60.0   # EMA sits far below 94
+    sig2, _ = R.build_signals(up)
+    assert dates[300] not in design_dates(sig2, "BREAKDOWN_SELL")
+
+
+def basket_panel(n=400, shock_ramp=False):
+    """20 high-turnover names at exactly 95% coverage that trend DOWN, 40 full-coverage names that trend UP."""
+    dates = pd.bdate_range("2019-01-01", periods=n)
+    rng = np.random.RandomState(3)
+    frames = []
+    for i in range(60):
+        down = i < 20
+        steps = rng.normal(-0.004 if down else 0.004, 0.003, n)
+        close = 100 * np.exp(np.cumsum(steps))
+        f = pd.DataFrame({"Date": dates, "Symbol": f"B{i:02d}", "Open": close, "High": close * 1.002,
+                          "Low": close * 0.998, "Close": close, "Volume": 1e9 if down else 1e5 * (1 + i)})
+        if down:
+            f = f.iloc[20:]                                   # 380 / 400 observations = exactly 0.95
+        frames.append(f)
+    return pd.concat(frames, ignore_index=True), dates
+
+
+def test_basket_includes_names_with_exactly_95_percent_coverage():
+    p, dates = basket_panel()
+    _, reg = R.build_signals(p)
+    assert reg.trend.iloc[-1] == "bear"                       # the down-trending 95%-coverage names are the basket
+
+
+def test_a_day_with_five_basket_returns_is_used():
+    n = 400
+    dates = pd.bdate_range("2019-01-01", periods=n)
+    rng = np.random.RandomState(5)
+    frames = []
+    for i in range(60):
+        close = 100 * np.exp(np.cumsum(rng.normal(0.001, 0.01, n)))
+        f = pd.DataFrame({"Date": dates, "Symbol": f"N{i:02d}", "Open": close, "High": close, "Low": close,
+                          "Close": close, "Volume": 1e9 if i < 20 else 1e5 * (1 + i)})
+        if 5 <= i < 20:
+            f.loc[f.index[1:10], ["Close", "High", "Low"]] = np.nan          # 15 of the 20 basket names missing on days 1-9
+        frames.append(f)
+    _, reg = R.build_signals(pd.concat(frames, ignore_index=True))
+    assert reg.index[0] == dates[1]                                         # exactly 5 returns: still a valid index day
+
+
+def test_volatility_regime_window_and_top_bucket():
+    p, dates = trending_panel_ramp()
+    _, reg = R.build_signals(p)
+    valid = reg.vol_regime.notna()
+    assert valid.sum() == len(reg) - 271                       # 21-bar vol, then a full 252-point expanding window
+    assert reg.vol_regime.iloc[-1] == "HIGH"                   # a series maximum has percentile exactly 1.0
+    assert reg.vol_regime.iloc[:271].isna().all()
+
+
+def trending_panel_ramp():
+    n = 700
+    t = np.arange(n)
+    rng = np.random.RandomState(11)
+    dates = pd.bdate_range("2018-01-01", periods=n)
+    scale = 0.004 + np.where(t > 450, (t - 450) * 0.0002, 0.0)             # volatility rises every day at the end
+    shock = rng.normal(0, 1, n) * scale
+    frames = []
+    for i in range(60):
+        close = 100 * np.exp(np.cumsum(0.001 + shock + rng.normal(0, 0.002, n)))
+        frames.append(pd.DataFrame({"Date": dates, "Symbol": f"V{i:02d}", "Open": close, "High": close * 1.002,
+                                    "Low": close * 0.998, "Close": close, "Volume": 1e5 * 1.1 ** i}))
+    return pd.concat(frames, ignore_index=True), dates
+
+
+def test_zero_excess_return_is_not_a_hit():
+    d = pd.to_datetime(["2020-01-01", "2020-01-02", "2020-01-03", "2020-01-04"])
+    sig = pd.DataFrame({"Date": d, "signal": "A", "ex5": [0.0, 0.0, 0.01, -0.01]})
+    assert R.clustered_stats(sig, 5, ["signal"], min_dates=1).loc["A", "hit_%"] == 25.0

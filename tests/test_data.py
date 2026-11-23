@@ -122,3 +122,12 @@ def test_symbol_series_bad_tick_removes_the_tick_and_the_bar_after_it():
     s = data.symbol_series(panel, "X")
     assert list(s.index) == [d[3]]
     assert s["log_ret"].iloc[0] == pytest.approx(np.log(102.0 / 100.0))
+
+
+def test_top_liquid_symbols_observation_count_boundary():
+    # 8 calendar years of span but exactly min_years * 200 = 1600 observations: kept; 1599: dropped
+    def sparse(sym, n_obs):
+        d = pd.date_range("2000-01-03", "2008-02-01", periods=n_obs)
+        return pd.DataFrame({"Date": d, "Symbol": sym, "Close": 10.0, "Volume": 10.0})
+    panel = pd.concat([sparse("EXACT", 1600), sparse("SHORT", 1599)], ignore_index=True)
+    assert data.top_liquid_symbols(panel, n=5) == ["EXACT"]

@@ -119,6 +119,10 @@ def test_refits_use_an_expanding_window_that_ends_before_each_block(monkeypatch)
     for (name, last_state, last_ret, n_train), s in zip(markov, starts):
         prev_day = df.index[df.index.get_loc(idx[s]) - 1]
         assert last_state == prev_day and last_ret == prev_day          # day t itself is never in training
+    seq = [f for f in fits if f[0] == "seq:lstm"]
+    for (name, last_feat, last_target, n_train), s in zip(seq, starts):
+        prev_day = df.index[df.index.get_loc(idx[s]) - 1]
+        assert last_feat == prev_day and last_target == prev_day
     sizes = [f[3] for f in markov]
     assert sizes[1] == sizes[0] + 15 and sizes[2] == sizes[1] + 15       # window expands, never slides
     assert [f[0] for f in fits if f[0].startswith("seq:")] == ["seq:lstm", "seq:gru"] * 3
