@@ -404,10 +404,11 @@ def trending_panel_ramp():
     rng = np.random.RandomState(11)
     dates = pd.bdate_range("2018-01-01", periods=n)
     scale = 0.004 + np.where(t > 450, (t - 450) * 0.0002, 0.0)             # volatility rises every day at the end
-    shock = scale * np.where(t % 2 == 0, 1.0, -1.0)                       # alternating sign: rolling std strictly rises
+    scale[-1] *= 3.0                                                        # the final bar is the most violent ever seen
+    shock = scale * np.where(t % 2 == 0, 1.0, -1.0)
     frames = []
     for i in range(60):
-        close = 100 * np.exp(np.cumsum(0.001 + shock + rng.normal(0, 0.002, n)))
+        close = 100 * np.exp(np.cumsum(0.001 + shock))                    # identical names: no idiosyncratic noise
         frames.append(pd.DataFrame({"Date": dates, "Symbol": f"V{i:02d}", "Open": close, "High": close * 1.002,
                                     "Low": close * 0.998, "Close": close, "Volume": 1e5 * 1.1 ** i}))
     return pd.concat(frames, ignore_index=True), dates
